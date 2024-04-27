@@ -4,8 +4,8 @@
   vars:
     myname: Siva Krishna
     phone: 8888888888
-  tasks:
+  tass:
   - name: Calling the variables.
     ansible.builtin.debug:
-      msgss: "Hi {{ myname }}, your phone number is {{ phone }}"
+      msg: "Hi {{ myname }}, your phone number is {{ phone }}"
 ...
