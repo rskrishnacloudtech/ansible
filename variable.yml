@@ -7,7 +7,7 @@
   tasks:    
   - name: Calling the variables.
     ansible.builtin.debug:
+      msg: "Hi {{ myname }}, your phone number is {{ phone }}"
     vars: 
       myname: From Task Level
-      msg: "Hi {{ myname }}, your phone number is {{ phone }}"
 ...
