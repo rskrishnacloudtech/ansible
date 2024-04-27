@@ -5,12 +5,12 @@
     username: newuser
   tasks:
   - name: Checking the condition.
-    ansible.builtin.command: id {{newuser}}
+    ansible.builtin.command: id {{username}}
     ignore_errors: true
     register: id_output
 
   - name: Condition.
-    ansible.builtin.command: sudo useradd {{newuser}}
+    ansible.builtin.command: sudo useradd {{username}}
     when: id_output.rc != 0
 
   - name: next statement.
