@@ -2,7 +2,7 @@
 - name: Priting the message on to the console.
   hosts: localhost
   vars:
-    name: Siva Krishna
+    myname: Siva Krishna
     phone: 8888888888
   tasks:
   - name: Calling the variables.
