@@ -1,0 +1,7 @@
+---
+- name: Pinging to remote node server.
+  hosts: remotenode
+  tasks:
+  - name: Ping the remote node server.
+    ansible.builtin.ping:
+...
