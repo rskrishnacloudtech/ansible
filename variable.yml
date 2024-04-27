@@ -1,5 +1,5 @@
 ---
-- nameww: Priting the message on to the console.
+- name: Priting the message on to the console.
   hosts: localhost
   vars:
     myname: Siva Krishna
@@ -7,5 +7,5 @@
   tasks:
   - name: Calling the variables.
     ansible.builtin.debug:
-      msg: "Hi {{ myname }}, your phone number is {{ phone }}"
+      msgss: "Hi {{ myname }}, your phone number is {{ phone }}"
 ...
