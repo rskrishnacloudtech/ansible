@@ -3,7 +3,7 @@
   hosts: localhost
   #vars_files:
   # - vars.yml
-  vars_prmot:
+  vars_prompt:
     - name: myname
       prompt: Please enter your name.
       private: false
