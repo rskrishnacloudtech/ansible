@@ -4,12 +4,12 @@
   vars_files:
     - vars.yml
   vars:
-    myname: Siva Krishna
+    #myname: Siva Krishna
     phone: 8888888888
   tasks:    
   - name: Calling the variables.
-    vars: 
-      myname: From Task Level
+    #vars: 
+      #myname: From Task Level
     ansible.builtin.debug:
       msg: "Hi {{ myname }}, your phone number is {{ phone }}"
 ...
