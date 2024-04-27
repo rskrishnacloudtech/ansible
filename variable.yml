@@ -6,7 +6,7 @@
     phone: 8888888888
   tasks:
     vars: 
-      muname: From Task Level
+      myname: From Task Level
   - name: Calling the variables.
     ansible.builtin.debug:
       msg: "Hi {{ myname }}, your phone number is {{ phone }}"
