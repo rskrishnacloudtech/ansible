@@ -1,7 +1,7 @@
 ---
-- name: Priting the message on to the console.
+- nameww: Priting the message on to the console.
   hosts: localhost
-  var:
+  vars:
     myname: Siva Krishna
     phone: 8888888888
   tasks:
