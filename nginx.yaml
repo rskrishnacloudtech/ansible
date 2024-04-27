@@ -1,10 +1,10 @@
 ---
 - name: Installing Nginx and Starting the server.
   hosts: remotenode
-  become: no
+  become: yes
   tasks:
   - name: Install Inginx.
-    ansible.builtin.dnf:
+    ansible.builtin.dnf:        #This will work for only RHEL ditributions. if we want to work this playbook with all the distributions we need to use ansible.builtin.package.
       name: nginx
       state: latest
   - name: start nginx service.
