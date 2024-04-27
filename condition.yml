@@ -4,7 +4,7 @@
   tasks:
   - name: Checking the condition.
     ansible.builtin.command: id username
-    ignore_erros: true
+    ignore_errors: true
   - name: next statement.
     ansible.builtin.debug:
       msg: "After error statement"
