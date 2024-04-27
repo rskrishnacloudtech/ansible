@@ -1,7 +1,7 @@
 ---
 - name: Installing Nginx and Starting the server.
   hosts: remotenode
-  become: yes
+  become: no
   tasks:
   - name: Install Inginx.
     ansible.builtin.dnf:
