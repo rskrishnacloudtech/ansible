@@ -6,7 +6,7 @@
   vars_prompt:
     - name: myname
       prompt: Please enter your name.
-      private: false
+      private: true
   vars:
     #myname: Siva Krishna
     phone: 8888888888
