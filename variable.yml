@@ -1,0 +1,8 @@
+----
+- name: Priting the message on to the console.
+  hosts: localhost
+  tasks:
+  - name: Priting the message on to the console.
+    ansible.builtin.debug:
+      msg: "This the message to be printed on the console."
+....
