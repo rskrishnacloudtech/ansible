@@ -1,0 +1,11 @@
+---
+- name: COnditions in Ansible.
+  hosts: remotenode
+  tasks:
+  - name: Checking the condition.
+    ansible.builtin.command: id username
+
+  - name: next statement.
+    ansible.builtin.debug:
+      msg: "After error statement"
+...
