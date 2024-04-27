@@ -1,14 +1,16 @@
 ---
 - name: COnditions in Ansible.
   hosts: remotenode
+  vars:
+    username: newuser
   tasks:
   - name: Checking the condition.
-    ansible.builtin.command: id username
+    ansible.builtin.command: id {{newuser}}
     ignore_errors: true
     register: id_output
 
   - name: Condition.
-    ansible.builtin.command: sudo useradd username
+    ansible.builtin.command: sudo useradd {{newuser}}
     when: id_output.rc != 0
 
   - name: next statement.
