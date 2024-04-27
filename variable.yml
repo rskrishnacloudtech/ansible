@@ -1,8 +1,11 @@
 ---
 - name: Priting the message on to the console.
   hosts: localhost
+  vars:
+    name: Siva Krishna
+    phone: 8888888888
   tasks:
-  - name: Priting the message on to the console.
+  - name: Calling the variables.
     ansible.builtin.debug:
-      msg: "This the message to be printed on the console."
+      msg: "Hi {{ name }}, your phone number is {{ phone }}"
 ...
