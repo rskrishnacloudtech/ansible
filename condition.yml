@@ -5,6 +5,12 @@
   - name: Checking the condition.
     ansible.builtin.command: id username
     ignore_errors: true
+    register: id_output
+
+  - name: Condition.
+    ansible.builtin.command: sudo useradd username
+    when: id_output.rc != 0
+
   - name: next statement.
     ansible.builtin.debug:
       msg: "After error statement"
