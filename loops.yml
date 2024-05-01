@@ -13,8 +13,8 @@
 
   - name: Installing git. removing mysql and nginx.
     ansible.builtin.dnf:
-      name:
-      state:
+      name: "{{ item.name }}"
+      state: "{{ item.state}}"
       loop:
       - {name: git, state: latest}
       - {name: mysql, state: absent}
