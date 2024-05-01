@@ -1,0 +1,22 @@
+---
+- name: Loops Practice
+  hosts: localhost
+  tasks:
+  - name: Installing multiple packages at a time through loop.
+    ansible.builtin.dnf:
+      name: {{ item }} 
+      state: latest
+      loop:
+      - mysql
+      - git
+      - nginx
+
+  - name: Installing git. removing mysql and nginx.
+    ansible.builtin.dnf:
+      name:
+      state:
+      loop:
+      - {name: git, state: latest}
+      - {name: mysql, state: absent}
+      - {name: nginx, state: absent}
+...

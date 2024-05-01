@@ -1,0 +1,59 @@
+---
+- name: Filters
+  hosts: localhost
+  tasks:
+  - name: Converting string to integer value.
+    vars:
+      number: 6
+    ansible.builtin.debug:
+      msg: "The given {{ number }} value is less than 10"
+    when: number | int < 10
+
+  - name: Converting string to integer value.
+    vars:
+      number: 15
+    ansible.builtin.debug:
+      msg: "The given {{number}} value is greater than 10"
+    when: number | int > 10
+
+  - name: Set the default value to an undefined variable.
+    ansible.builtin.debug:
+      msg: "Hi, {{ variable | default('This variable is not defined.')}}"
+
+  - name: Converting the lower case text to upper case text and vice-versa.
+    vars:
+      lowerstring: "devops"
+      UPPERSTRING: "DEVOPS"
+    ansible.builtin.debug:
+      msg: "The upper case value of {{ lowerstring }} is {{ lowerstring | upper }}"
+      msg: "The lower case value of {{ UPPERSTRING }} is {{ UPPERSTRING | lower }}"
+
+  - name: Printing unique values from a list of values.
+    vars:
+      listvalues: [1,2,3,4,5,6,7,8,9,3,4,5,6,2,12]
+    ansible.builtin.debug:
+      msg: "The unique values from list {{listvalues}} values. {{ listvalues | unique }}"
+
+  - name: Printing minimum and maximum values from a list of values.
+    vars:
+      list: [23,452,678,34564,32323,76,88,9,0]
+    ansible.builtin.debug:
+      msg: "The minimum value from the list {{list}} is: {{list|min}} and the maximum value from the list is: {{ list | max }}"
+  
+  - name: Converting the dictionary (Map) values into items (List).
+    vars:
+      map_dict: 
+        name: siva
+        number: 12345
+    ansible.builtin.debug:
+      msg: "The values are converted from a map {{map_dict}} to list {{ map_dict | dict2items }}"
+
+  - name: COnvering the items (List) to dictionary (Map) values.
+    vars:
+      list_val: 
+      - {'key': 'name', 'value': 'siva'}
+      - {'key': 'number', 'value': 12345}
+    ansible.builtin.debug:
+      msg: "The values are converted from a list {{list_val}} to map {{ list_val | items2dict }}"
+      
+...
